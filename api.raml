@@ -1,0 +1,55 @@
+#%RAML 1.0
+title: Backend Challenge Podvisory
+description: Technical Challenge Backend Developer - Podvisory
+mediaType: application/json
+
+/vehicle:
+  description: Vehicle entity
+  post:
+    description: Save a collection of vehicles from an csv file on the server's database
+    bodyParameters: 
+      userName:
+        displayName: userName
+        type: string
+        description: "User that does the file upload"
+        example: Peter Boris
+        required: true
+      CSV FILE:
+        displayName: Csv File
+        type: File
+        description: "A Csv file with the vehicles data"
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [{_id:"60b3d8913d581372af9cd0ac",
+              "uuid": "1944d37f-19ef-4bda-866a-8e53e716bd82",
+              "vind": "1GYUCCEF9AR721979",
+              "make": "Skajo",
+              "model": "Legacy",
+              "mileage": 61643,
+              "year": 1994,
+              "price": 3709,
+              "zipCode": "72-210",
+              "createDate": "9/16/2020",
+              "updateDate": "10/11/2020",
+              "userName": "Joanna Wordsworth"},
+              {_id:"60b3d8913d581372af9ce0ac",
+              "uuid": "397f00d6-2e82-4aee-8942-8d04d3b15994",
+              "vind": "3G5DA03E92S102485",
+              "make": "Bluezoom",
+              "model": "F250",
+              "mileage": 5090,
+              "year": 1996,
+              "price": 4177,
+              "zipCode": "503 02",
+              "createDate": "1/15/2021",
+              "updateDate": "12/6/2020",
+              "userName": "Joanna Wordsworth"}
+      400:
+        body:
+          application/json:
+            example: |
+              {"message":"UUID or VIND already exist"}
