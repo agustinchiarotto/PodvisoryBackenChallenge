@@ -12,7 +12,7 @@ Linkedin: https://www.linkedin.com/in/agustinchiarotto/
 ---
 
 **Objective**
-The objective of this code is to respond to the functionality presented in the Podvisory backend challenge. It has two endpoints detailed in the api.html file and in testing section from this file.
+The objective of this code is to respond to the functionality presented in the Podvisory backend challenge. It has two endpoints detailed in the api.html file (you can open it in any browser) and in testing section from this file.
 
 ---
 
@@ -22,7 +22,9 @@ This challenge is solved principally with NodeJs, Express and Mongoose. Besides 
 ---
 
 **Assumptions and Design Decisions**
-The incoming data from the csv file is storing in a real database, not in a file and not in-memory database. I made this decision because its has the potencial to be used in a real envoirement. The reading of the file does not need file storing, it just use the buffer to parse the csv data into a json.
+There is a providerConfig.js file that has the information to make the map from a concrete provider csv to our own databse columns. The best practice is to have those configs in a database, and in consequence, we could add, edit or delete them in real-time, but it will require an extended time and I believe that is not the point of this challenge.
+
+---
 
 **Documentation**
 The file api.html has the entire documentation for this API. There you could find a description of each endpoint, with his parameters, responses, and examples.
@@ -31,7 +33,8 @@ The file api.html has the entire documentation for this API. There you could fin
 
 **Testing**
 There is a db manager (dbManager.js) that allows creating a virtual database to be able to carry out all the tests without having to modify the real database
-You can use the / endpoint (default: http://localhost:3000/) for an html file with two inputs: The file to upload and the user name, and a button to make a post to /vehicles.
+You can use the / endpoint (default: http://localhost:3000/) for an html file with two inputs: The file to upload and the provider name, and a button to make a post to /vehicles.
+There are also to csv files on /testing/testingCSVFiles which belong to Chad and Jonh providers.
 
 ---
 

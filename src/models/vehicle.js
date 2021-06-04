@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const VehicleSchema = Schema({
   uuid: { type: String, unique: true },
-  vind: { type: String, unique: true },
+  vin: { type: String, unique: true },
   make: String,
   model: String,
   mileage: String,
@@ -13,7 +13,7 @@ const VehicleSchema = Schema({
   zipCode: String,
   createDate: Date,
   updateDate: Date,
-  userName: String,
+  providerName: String,
 });
 
 const Vehicle = mongoose.model('Vehicle', VehicleSchema);

@@ -5,11 +5,11 @@ const dbman = new DBManager();
 const mockVehicles = require('./mockData/vehiclesData.json');
 
 const postVehiclesData = {
-  userName: 'user1',
+  providerName: 'user1',
   vehicles: [
     {
       uuid: '1',
-      vind: '1',
+      vin: '1',
       make: '1',
       model: '1',
       mileage: '1',
@@ -21,7 +21,7 @@ const postVehiclesData = {
     },
     {
       uuid: '2',
-      vind: '2',
+      vin: '2',
       make: '2',
       model: '2',
       mileage: '2',
@@ -46,7 +46,7 @@ describe('Post Vehicle - /vehicle', () => {
   it('should post vehicles correctly', async () => {
     await insertMockVehicles();
     const result = await VehicleControler.createVehicles(postVehiclesData);
-    expect(result[0].userName).toBe(postVehiclesData.userName);
+    expect(result[0].providerName).toBe(postVehiclesData.providerName);
   });
 
   it('should return an error on posting a vehicle (duplicated uuid)', async () => {

@@ -1,10 +1,10 @@
 const Vehicle = require('../models/vehicle');
 
-const createVehicles = async ({ userName, vehicles }) => {
+const createVehicles = async ({ providerName, vehicles }) => {
   const newVehicles = vehicles.map((vehicle) => {
     return new Vehicle({
       uuid: vehicle.uuid,
-      vind: vehicle.vind,
+      vin: vehicle.vin,
       make: vehicle.make,
       model: vehicle.model,
       mileage: vehicle.mileage,
@@ -13,7 +13,7 @@ const createVehicles = async ({ userName, vehicles }) => {
       zipCode: vehicle.zipCode,
       createDate: vehicle.createDate,
       updateDate: vehicle.updateDate,
-      userName: userName,
+      providerName: providerName,
     });
   });
 
