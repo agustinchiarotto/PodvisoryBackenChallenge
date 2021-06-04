@@ -24,6 +24,8 @@ This challenge is solved principally with NodeJs, Express and Mongoose. Besides 
 **Assumptions and Design Decisions**
 The incoming data from the csv file is storing in a real database, not in a file and not in-memory database. I made this decision because its has the potencial to be used in a real envoirement. The reading of the file does not need file storing, it just use the buffer to parse the csv data into a json.
 
+---
+
 **Documentation**
 The file api.html has the entire documentation for this API. There you could find a description of each endpoint, with his parameters, responses, and examples.
 
@@ -31,7 +33,7 @@ The file api.html has the entire documentation for this API. There you could fin
 
 **Testing**
 There is a db manager (dbManager.js) that allows creating a virtual database to be able to carry out all the tests without having to modify the real database
-You can use the / endpoint (default: http://localhost:3000/) for an html file with two inputs: The file to upload and the user name, and a button to make a post to /vehicles.
+You can use the / endpoint (default: http://localhost:3000/) for a html file with two inputs: The file to upload and the user name, and a button to make a post to /vehicles.
 
 ---
 
