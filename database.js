@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { environment, api_hostname, api_port, db_hostname, db_port } = require('./config');
+const { db_hostname, db_port } = require('./config');
 
 mongoose.connect(`mongodb://${db_hostname}:${db_port}/podvisory`, {
   useNewUrlParser: true,

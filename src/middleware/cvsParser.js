@@ -2,11 +2,8 @@ const csv = require('csv-parser');
 const { Readable } = require('stream');
 const providerConfigs = require('../../providerConfigs');
 
-const results = [];
-
 const parseData = (req, res, next) => {
-  results.splice(0, results.length);
-
+  const results = [];
   const providerConfig = providerConfigs.providers.find(
     (config) => config.providerName === req.body.providerName,
   );
@@ -26,4 +23,4 @@ const parseData = (req, res, next) => {
   }
 };
 
-(module.exports = parseData), results;
+module.exports = parseData;

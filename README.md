@@ -12,7 +12,7 @@ Linkedin: https://www.linkedin.com/in/agustinchiarotto/
 ---
 
 **Objective**
-The objective of this code is to respond to the functionality presented in the Podvisory backend challenge. It has two endpoints detailed in the api.html file (you can open it in any browser) and in testing section from this file.
+The objective of this code is to respond to the functionality presented in the Podvisory backend challenge. It has two endpoints detailed in the api.html file and in testing section from this file.
 
 ---
 
@@ -23,11 +23,12 @@ This challenge is solved principally with NodeJs, Express and Mongoose. Besides 
 
 **Assumptions and Design Decisions**
 There is a providerConfig.js file that has the information to make the map from a concrete provider csv to our own databse columns. The best practice is to have those configs in a database, and in consequence, we could add, edit or delete them in real-time, but it will require an extended time and I believe that is not the point of this challenge.
+On the other hand, because of time restrictions, I am mapping the whole csv file to memory. A better practice could be to stream the file in parts.
 
 ---
 
 **Documentation**
-The file api.html has the entire documentation for this API. There you could find a description of each endpoint, with his parameters, responses, and examples.
+The endpoin /api-docs has the entire documentation for this API (default: http://localhost:3000/api-docs). There you could find a description of each endpoint, with his parameters, responses, and examples.
 
 ---
 

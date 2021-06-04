@@ -4,7 +4,7 @@
   "description": "Podvisory backend challenge",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest  --testEnvironment=node",
     "start": "node app.js",
     "dev": "nodemon app.js",
     "mockdata": "node ./scripts/insertMockdata.js $*"

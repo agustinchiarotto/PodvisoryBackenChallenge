@@ -20,13 +20,20 @@ app.use(bodyParser.json());
 
 app.use('/vehicles', vehicleRoutes);
 app.use(express.json());
-app.use(express.static(__dirname + '/public')).use(cors());
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/api-docs', (req, res) => {
+  res.sendFile(__dirname + '/api.html');
+});
+
 app.listen(api_port || 3000, api_hostname, () => {
-  console.log(`Server running in ${environment} mode at http://${api_hostname}:${api_port}/`);
-  console.log('Listening on ', api_port || 3000);
+  console.log('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *');
+  console.log(`* Server running in ${environment} mode at http://${api_hostname}:${api_port}/  *`);
+  console.log('* Listening on ', api_port || 3000, '                                           *');
+  console.log(`* Documentation: http://${api_hostname}:${api_port}/api-docs                 *`);
+  console.log(`* Upload a file to test this server: http://${api_hostname}:${api_port}/     *`);
+  console.log('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *');
 });
